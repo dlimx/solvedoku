@@ -1,0 +1,14 @@
+{
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "no-process-exit": "off",
+    "class-methods-use-this": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
