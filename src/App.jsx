@@ -1,23 +1,30 @@
 import React from 'react';
-import './App.css';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Solve-doku</h1>
       </header>
-    </div>
+    </Container>
   );
 }
 
