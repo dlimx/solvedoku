@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Game from './components/Game';
 
 const Container = styled.div`
   padding-right: 15px;
@@ -24,6 +25,7 @@ function App() {
       <header className="App-header">
         <h1>Solve-doku</h1>
       </header>
+      <Game />
     </Container>
   );
 }

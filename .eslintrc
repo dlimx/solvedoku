@@ -1,14 +1,15 @@
 {
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended", "prettier"],
   "plugins": ["prettier"],
   "rules": {
     "no-unused-vars": "warn",
     "no-console": "warn",
     "no-process-exit": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": "off"
   },
+  "root": true,
   "env": {
-    "browser": true,
-    "node": true
+    "browser": true
   }
 }
