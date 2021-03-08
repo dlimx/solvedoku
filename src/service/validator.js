@@ -14,7 +14,7 @@ const validateRow = (filled, size = 9) => {
     }
   }
 
-  return total !== size;
+  return total === size;
 };
 
 export const validate = (puzzle, complete = false) => {

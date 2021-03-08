@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { cloneDeep } from 'lodash';
 import { validate } from '../service/validator';
 import { getGame } from '../service/generator';
+import { getSolution } from '../service/solver';
 
 const Container = styled.div`
   display: flex;
@@ -24,7 +25,14 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function Controls({ game, setGame, setErrors, initialGame, setInitialGame }) {
+function Controls({
+  game,
+  setGame,
+  setErrors,
+  initialGame,
+  immutable,
+  setInitialGame,
+}) {
   const [message, setMessage] = useState('');
 
   const restartGame = (e) => {
@@ -51,6 +59,9 @@ function Controls({ game, setGame, setErrors, initialGame, setInitialGame }) {
 
   const solveGame = (e) => {
     e.preventDefault();
+    const solvedGame = getSolution(initialGame, immutable);
+    setGame(solvedGame);
+    setMessage("Here's one solution!");
   };
 
   return (
@@ -68,6 +79,7 @@ function Controls({ game, setGame, setErrors, initialGame, setInitialGame }) {
 
 Controls.propTypes = {
   game: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
+  immutable: PropTypes.objectOf(PropTypes.bool).isRequired,
   initialGame: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
     .isRequired,
   setInitialGame: PropTypes.func.isRequired,

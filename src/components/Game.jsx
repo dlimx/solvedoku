@@ -54,11 +54,12 @@ function Game() {
         errors={errors}
       />
       <Controls
-        setGame={setGame}
-        setInitialGame={setInitialGame}
         game={game}
+        immutable={immutable}
         initialGame={initialGame}
         setErrors={setErrors}
+        setGame={setGame}
+        setInitialGame={setInitialGame}
       />
     </Container>
   );
